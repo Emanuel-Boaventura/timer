@@ -1,5 +1,5 @@
 const History = () => {
-  return <h1>asdilhjkgasdsa</h1>
-}
+  return <h1>asdilhjkgasdsa</h1>;
+};
 
-export default History
+export default History;
