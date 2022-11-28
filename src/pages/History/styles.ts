@@ -37,6 +37,7 @@ export const HistoriList = styled.main`
         border-top-right-radius: 8px;
         padding-right: 1.5rem;
       }
+      
     }
 
     td{
