@@ -1,15 +1,7 @@
 import { useContext } from 'react';
 import { CyclesContext } from '../../contexts/CyclesContext';
+import { Cycle } from '../../reducers/cycles/reducer';
 import { HistoriList, HistoryContainer, Status } from './styles';
-
-interface Cycle {
-  id: string;
-  task: string;
-  minutesAmount: number;
-  startDate: Date;
-  interruptedDate?: Date;
-  finishedDate?: Date;
-}
 
 const History = () => {
   const { cycles } = useContext(CyclesContext);
@@ -54,29 +46,7 @@ const History = () => {
               <th>Status</th>
             </tr>
           </thead>
-          <tbody>
-            {displayCycleListReversed(cycles)}
-            {/* {cycles.map((cycle) => {
-              return (
-                <tr key={cycle.id}>
-                  <td>{cycle.task}</td>
-                  <td>{cycle.minutesAmount} minutos</td>
-                  <td>{cycle.startDate.toISOString()}</td>
-                  <td>
-                    {cycle.finishedDate && (
-                      <Status statusColor='green'>Concluido</Status>
-                    )}
-                    {cycle.interruptedDate && (
-                      <Status statusColor='red'>Interrompido</Status>
-                    )}
-                    {!cycle.finishedDate && !cycle.interruptedDate && (
-                      <Status statusColor='yellow'>Em andamento</Status>
-                    )}
-                  </td>
-                </tr>
-              );
-            })}  */}
-          </tbody>
+          <tbody>{displayCycleListReversed(cycles)}</tbody>
         </table>
       </HistoriList>
     </HistoryContainer>
